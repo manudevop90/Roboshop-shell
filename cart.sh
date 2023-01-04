@@ -7,7 +7,7 @@
  curl -s -L -o /tmp/cart.zip "https://github.com/roboshop-devops-project/cart/archive/main.zip" >/tmp/cart.log
  cd /home/roboshop >/tmp/cart.log
  rm -rf cart >/tmp/cart.log
- unzip -o /tmp/cart.zip
+ unzip -o /tmp/cart.zip  >/tmp/cart.log
  mv cart-main cart >/tmp/cart.log
  cd cart >/tmp/cart.log
  npm install >/tmp/cart.log
