@@ -1,8 +1,9 @@
+ set -e
  yum install maven -y
 
  useradd roboshop
 
-set -e
+
  curl -s -L -o /tmp/shipping.zip "https://github.com/roboshop-devops-project/shipping/archive/main.zip"
  cd /home/roboshop
   rm -rf shipping
