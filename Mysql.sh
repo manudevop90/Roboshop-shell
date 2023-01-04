@@ -12,9 +12,9 @@
 
  mysql_secure_installation
 
-  mysql -uroot -pRoboShop@1
+mysql -uroot -pRoboShop@1
 
- > uninstall plugin validate_password;
+> uninstall plugin validate_password;
 
   curl -s -L -o /tmp/mysql.zip "https://github.com/roboshop-devops-project/mysql/archive/main.zip"
  
