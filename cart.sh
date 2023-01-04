@@ -1,6 +1,6 @@
  set -e
  curl -sL https://rpm.nodesource.com/setup_lts.x | bash  &>>/tmp/cart.log
- yum install nodejs -y  &>>/tmp/cart.log
+ yum install nodejs -y   &>>/tmp/cart.log
   
  useradd roboshop  &>>/tmp/cart.log
 
