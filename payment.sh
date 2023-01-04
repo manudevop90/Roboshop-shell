@@ -5,7 +5,7 @@
 
  curl -L -s -o /tmp/payment.zip "https://github.com/roboshop-devops-project/payment/archive/main.zip"
  cd /home/roboshop
- rm-rf payment
+ rm -rf payment
  unzip -o /tmp/payment.zip
  mv payment-main payment
 
