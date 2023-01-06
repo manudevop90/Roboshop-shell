@@ -6,3 +6,4 @@ date1=$(date +%F)
 echo todaye date is $date1
 
 b=$((2+3*5))
+echo value of b = $b
