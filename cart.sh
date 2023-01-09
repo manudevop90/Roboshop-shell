@@ -5,8 +5,9 @@ echo installing nodejs
  yum install nodejs -y   &>>/tmp/cart.log
 echo$?
   echo adding application user
+  echo$?
  useradd roboshop  &>>/tmp/cart.log
-echo$?
+
 echo dowloading content
  curl -s -L -o /tmp/cart.zip "https://github.com/roboshop-devops-project/cart/archive/main.zip"  &>>/tmp/cart.log
   cd /home/roboshop  &>>/tmp/cart.log
