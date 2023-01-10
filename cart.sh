@@ -5,7 +5,7 @@ if [ $? -eq 0 ]; then
   echo -e "\e[32mSUCCESS\e[0m"
 else
   echo -e "\e[31mfaile\e[0m"
-  exit
+  exit 1
 fi
 echo installing nodejs
 yum install nodejs -y   &>>/tmp/cart.log
@@ -13,16 +13,19 @@ if [ $? -eq 0 ]; then
   echo -e "\e[32mSUCCESS\e[0m"
 else
   echo -e "\e[31mfaile\e[0m"
-  exit
+  exit 1
 fi
 
-echo adding application user
-useradd roboshop  &>>/tmp/cart.log
-if [ $? -eq 0 ]; then
-  echo -e "\e[32mSUCCESS\e[0m"
-else
-  echo -e "\e[31mfaile\e[0m"
-  exit
+id roboshop &>>/tmp/cart.log
+if [ $? -ne 0]; then
+   echo adding application user
+   useradd roboshop  &>>/tmp/cart.log
+   if [ $? -eq 0 ]; then
+      echo -e "\e[32mSUCCESS\e[0m"
+   else
+      echo -e "\e[31mfaile\e[0m"
+  exit 1
+  fi
 fi
 
 echo dowloading content
@@ -32,7 +35,7 @@ if [ $? -eq 0 ]; then
   echo -e "\e[32mSUCCESS\e[0m"
 else
   echo -e "\e[31mfaile\e[0m"
-  exit
+  exit 1
 fi
 
 echo cleaning old application content
@@ -41,7 +44,7 @@ if [ $? -eq 0 ]; then
   echo -e "\e[32mSUCCESS\e[0m"
 else
   echo -e "\e[31mfaile\e[0m"
-  exit
+  exit 1
 fi
 
 echo extract application archive
@@ -52,7 +55,7 @@ if [ $? -eq 0 ]; then
   echo -e "\e[32mSUCCESS\e[0m"
 else
   echo -e "\e[31mfaile\e[0m"
-  exit
+  exit 1
 fi
 
 echo installing nodejs Dependencies
@@ -61,7 +64,7 @@ if [ $? -eq 0 ]; then
   echo -e "\e[32mSUCCESS\e[0m"
 else
   echo -e "\e[31mfaile\e[0m"
-  exit
+  exit 1
 fi
 
  #update ips
@@ -72,7 +75,7 @@ if [ $? -eq 0 ]; then
   echo -e "\e[32mSUCCESS\e[0m"
 else
   echo -e "\e[31mfaile\e[0m"
-  exit
+  exit 1
 fi
 
 echo starting cart services
@@ -82,5 +85,5 @@ if [ $? -eq 0 ]; then
   echo -e "\e[32mSUCCESS\e[0m"
 else
   echo -e "\e[31mfaile\e[0m"
-  exit
+  exit 1
 fi
