@@ -2,7 +2,9 @@
 echo setting nodejs repos
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash  &>>/tmp/cart.log
 echo $?
-
+if echo $? -eq 0
+then
+  echo \e
 echo installing nodejs
 yum install nodejs -y   &>>/tmp/cart.log
 echo $?
