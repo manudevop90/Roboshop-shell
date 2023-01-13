@@ -1,6 +1,6 @@
 
 echo setting nodejs repos
-curl -sL https://rpm.nodesource.com/setup_lts.x | bash  &>>/tmp/cart.log
+curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>/tmp/cart.log
 if [ $? -eq 0 ]; then
   echo -e "\e[32mSUCCESS\e[0m"
 else
@@ -8,7 +8,7 @@ else
   exit 1
 fi
 echo installing nodejs
-yum install nodejs -y  &>>/tmp/cart.log
+yum install nodejs -y &>>/tmp/cart.log
 if [ $? -eq 0 ]; then
   echo -e "\e[32mSUCCESS\e[0m"
 else
