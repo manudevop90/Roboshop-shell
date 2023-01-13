@@ -9,3 +9,4 @@ b=$((2+3*5))
 echo value of b = $b
 
 echo value of c = $c
+
