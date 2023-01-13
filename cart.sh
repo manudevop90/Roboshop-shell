@@ -8,6 +8,7 @@ else
   exit 1
 fi
 echo installing nodejs
+sudo yum rm nodejs
 yum install nodejs -y &>>/tmp/cart.log
 if [ $? -eq 0 ]; then
   echo -e "\e[32mSUCCESS\e[0m"
