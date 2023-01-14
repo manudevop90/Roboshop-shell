@@ -26,7 +26,8 @@ statuscheck
 fi
 
 echo dowloading content
-curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip"  &>>/tmp/${COMPONENT}.log && cd /home/roboshop  &>>/tmp/${COMPONENT}.log
+curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip"  &>>/tmp/${COMPONENT}.log
+ cd /home/roboshop  &>>/tmp/${COMPONENT}.log
  statuscheck
 
 echo cleaning old application content
@@ -35,7 +36,7 @@ echo cleaning old application content
 
 echo extract application archive
 unzip -o /tmp/${COMPONENT}.zip &>>/tmp/${COMPONENT}.log && mv ${COMPONENT}-main ${COMPONENT} &>>/tmp/${COMPONENT}.log && cd /home/roboshop/${COMPONENT} &>>/tmp/${COMPONENT}.log
- statuscheck
+statuscheck
 
 echo installing nodejs Dependencies
 npm install &>>/tmp/${COMPONENT}.log
