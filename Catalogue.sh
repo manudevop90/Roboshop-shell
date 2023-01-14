@@ -1,14 +1,16 @@
-
- echo settings nodejs repo
- curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>/tmp/catalogue.log
 statuscheck() {
 if [ $? -eq 0 ]; then
   echo -e "\e[32msuccess\e[0m"
 else
   echo -e "\e[31mFail\e[0m"
   exit 1
-fi   
+fi
 }
+
+echo settings nodejs repo
+ curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>/tmp/catalogue.log
+statuscheck
+
 echo installing nodejs repo
 yum install nodejs -y &>>/tmp/catalogue.log
 statuscheck
