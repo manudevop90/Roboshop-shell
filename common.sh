@@ -41,5 +41,5 @@ cd /home/roboshop/${COMPONENT} &>>/tmp/${COMPONENT}.log
 
 echo installing nodejs Dependencies
 npm install &>>/tmp/${COMPONENT}.log
- statuscheck
-}
+ echo $?
+ }
