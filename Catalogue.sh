@@ -34,7 +34,7 @@ echo download content
 if [ $? -eq 0 ]; then
     echo -e "\e[32msuccuess\e[0m"
     else
-    echo -e "\e31Fail\e[0m"
+    echo -e "\e[31Fail\e[0m"
     exit 1
 fi
  echo cleaning old application content
@@ -42,7 +42,7 @@ fi
 if [ $? -eq 0 ]; then
     echo -e "\e[32msuccuess\e[0m"
     else
-    echo -e "\e31Fail\e[0m"
+    echo -e "\e[31Fail\e[0m"
     exit 1
 fi
  echo extract application archive
@@ -52,7 +52,7 @@ fi
 if [ $? -eq 0 ]; then
     echo -e "\e[32msuccuess\e[0m"
     else
-    echo -e "\e31Fail\e[0m"
+    echo -e "\e[31Fail\e[0m"
     exit 1
 fi
  echo installing nodejs dependencies
@@ -60,7 +60,7 @@ fi
 if [ $? -eq 0 ]; then
     echo -e "\e[32msuccuess\e[0m"
     else
-    echo -e "\e31Fail\e[0m"
+    echo -e "\e[31Fail\e[0m"
     exit 1
 fi
 echo configure catalogue systemd services
@@ -69,7 +69,7 @@ echo configure catalogue systemd services
 if [ $? -eq 0 ]; then
     echo -e "\e[32msuccuess\e[0m"
     else
-    echo -e "\e31Fail\e[0m"
+    echo -e "\e[31Fail\e[0m"
     exit 1
 fi
  echo starting catalogue services
@@ -78,6 +78,6 @@ fi
 if [ $? -eq 0 ]; then
     echo -e "\e[32msuccuess\e[0m"
     else
-    echo -e "\e31Fail\e[0m"
+    echo -e "\e[31Fail\e[0m"
     exit 1
 fi
