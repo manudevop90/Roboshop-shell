@@ -1,5 +1,4 @@
-
-}
+source common.sh
 
 echo settings nodejs repo
  curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>/tmp/catalogue.log
