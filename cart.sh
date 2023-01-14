@@ -33,7 +33,7 @@ else
 fi
 
 id roboshop &>>/tmp/cart.log
-if [ $? -ne 0]; then
+if [ $? -ne 0 ]; then
    echo adding application user
    useradd roboshop  &>>/tmp/cart.log
    if [ $? -eq 0 ]; then
@@ -45,8 +45,7 @@ if [ $? -ne 0]; then
 fi
 
 echo dowloading content
-curl -s -L -o /tmp/cart.zip "https://github.com/roboshop-devops-project/cart/archive/main.zip"  &>>/tmp/cart.log
-cd /home/roboshop  &>>/tmp/cart.log
+curl -s -L -o /tmp/cart.zip "https://github.com/roboshop-devops-project/cart/archive/main.zip"  &>>/tmp/cart.log && cd /home/roboshop  &>>/tmp/cart.log
 if [ $? -eq 0 ]; then
   echo -e "\e[32mSUCCESS\e[0m"
 else
@@ -64,9 +63,7 @@ else
 fi
 
 echo extract application archive
-unzip -o /tmp/cart.zip  &>>/tmp/cart.log
-mv cart-main cart &>>/tmp/cart.log
-cd cart &>>/tmp/cart.log
+unzip -o /tmp/cart.zip &>>/tmp/cart.log && mv cart-main cart &>>/tmp/cart.log && cd cart &>>/tmp/cart.log
 if [ $? -eq 0 ]; then
   echo -e "\e[32mSUCCESS\e[0m"
 else
