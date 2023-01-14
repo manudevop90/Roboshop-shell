@@ -10,7 +10,7 @@ fi
 
 echo installing nodejs repo
 yum install nodejs -y &>>/tmp/catalogue.log
-if [ $? -eg 0 ]; then
+if [ $? -eq 0 ]; then
   echo -e "\e[32msuccess\e[0m"
   else
     echo -e "\e[31mFail\e[0m"
