@@ -18,10 +18,10 @@ if [ $? -eq 0 ]; then
  fi
 
 id roboshop &>>/tmp/catalogue.log
-if [ $? -ne 0]; then
+if [ $? -ne 0 ]; then
 echo adding application user
  useradd roboshop &>>/tmp/catalogue.log
- if [ $? -eq 0]; then
+ if [ $? -eq 0 ]; then
    echo -e "\e[32msuccess\e[0m"
 else
   echo -e "\e[31mFail\e[0m"
