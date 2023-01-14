@@ -34,10 +34,8 @@ echo cleaning old application content
  statuscheck
 
 echo extract application archive
-unzip -o /tmp/${COMPONENT}.zip &>>/tmp/${COMPONENT}.log
-mv ${COMPONENT}-main ${COMPONENT} &>>/tmp/${COMPONENT}.log
-cd /home/roboshop/${COMPONENT} &>>/tmp/${COMPONENT}.log
- echo $?
+unzip -o /tmp/${COMPONENT}.zip &>>/tmp/${COMPONENT}.log && mv ${COMPONENT}-main ${COMPONENT} &>>/tmp/${COMPONENT}.log && cd /home/roboshop/${COMPONENT} &>>/tmp/${COMPONENT}.log
+ statuscheck
 
 echo installing nodejs Dependencies
 npm install &>>/tmp/${COMPONENT}.log
