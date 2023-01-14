@@ -1,19 +1,7 @@
 source common.sh
 
-echo settings nodejs repo
- curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>/tmp/catalogue.log
-statuscheck
+NODEJS
 
-echo installing nodejs repo
-yum install nodejs -y &>>/tmp/catalogue.log
-statuscheck
-
-id roboshop &>>/tmp/catalogue.log
-if [ $? -ne 0 ]; then
-echo adding application user
- useradd roboshop &>>/tmp/catalogue.log
-statuscheck
-fi
 echo download content
  curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip" &>>/tmp/catalogue.log
  cd /home/roboshop &>>/tmp/catalogue.log
