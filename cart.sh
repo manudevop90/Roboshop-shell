@@ -19,7 +19,7 @@ fi
 
 id roboshop &>>/tmp/cart.log
 if [ $? -ne 0]; then
-   echo adding application user
+   echo adding application user &>>/tmp/cart.log
    useradd roboshop  &>>/tmp/cart.log
    if [ $? -eq 0 ]; then
       echo -e "\e[32mSUCCESS\e[0m"
@@ -28,7 +28,6 @@ if [ $? -ne 0]; then
   exit 1
   fi
 fi
-
 echo dowloading content
 curl -s -L -o /tmp/cart.zip "https://github.com/roboshop-devops-project/cart/archive/main.zip"  &>>/tmp/cart.log
 cd /home/roboshop  &>>/tmp/cart.log
