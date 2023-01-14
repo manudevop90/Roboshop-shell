@@ -2,7 +2,6 @@ source common.sh
 NODEJS
 COMPONENT=catalogue
 
-
 echo configure catalogue systemd services
  mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service &>>/tmp/catalogue.log &&  systemctl daemon-reload &>>/tmp/catalogue.log
 statuscheck
