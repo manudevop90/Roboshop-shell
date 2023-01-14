@@ -15,7 +15,8 @@ if [ $? -eg 0 ]; then
   else
     echo -e "\e[31mFail\e[0m"
     exit 1
- fi   
+ fi
+
 id roboshop &>>/tmp/catalogue.log
 if [ $? -ne 0]; then
 echo adding application user
