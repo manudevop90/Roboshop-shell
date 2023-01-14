@@ -12,7 +12,7 @@ echo installing nodejs
 
 sudo yum rm nodejs &>>/tmp/cart.log
 sudo rm -f /usr/local/bin/node &>>/tmp/cart.log
-sudo yum install nodejs -y --enablerepo=epel-testing &>>/tmp/cart.log
+sudo yum install nodejs -y  &>>/tmp/cart.log
 if [ $? -eq 0 ]; then
   echo -e "\e[32mSUCCESS\e[0m"
 else
