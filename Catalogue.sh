@@ -7,5 +7,5 @@ echo configure catalogue systemd services
 statuscheck
 
 echo starting catalogue services
- systemctl start catalogue &>>/tmp/catalogue.log &&  systemctl enable catalogue &>>/tmp/catalogue.log
+ systemctl start catalogue &>>/tmp/catalogue.log && systemctl enable catalogue &>>/tmp/catalogue.log
 statuscheck
