@@ -21,13 +21,13 @@ id roboshop &>>/tmp/catalogue.log
 if [ $? -ne 0 ]; then
 echo adding application user
  useradd roboshop &>>/tmp/catalogue.log
- if [ $? -eq 0 ]; then
+if [ $? -eq 0 ]; then
    echo -e "\e[32msuccess\e[0m"
 else
   echo -e "\e[31mFail\e[0m"
   exit 1
-  fi
-
+fi
+fi
 echo download content
  curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip" &>>/tmp/catalogue.log
  cd /home/roboshop &>>/tmp/catalogue.log
@@ -72,7 +72,8 @@ if [ $? -eq 0 ]; then
     echo -e "\e[31mFail\e[0m"
     exit 1
 fi
- echo starting catalogue services
+
+echo starting catalogue services
  systemctl start catalogue &>>/tmp/catalogue.log
  systemctl enable catalogue &>>/tmp/catalogue.log
 if [ $? -eq 0 ]; then
