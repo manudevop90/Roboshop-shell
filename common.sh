@@ -34,7 +34,7 @@ rm -rf ${COMPONENT} &>>/tmp/${COMPONENT}.log
 statuscheck
 
 echo extract application archive
-unzip /tmp/${COMPONENT}.zip &>>/tmp/${COMPONENT}.log && mv ${COMPONENT}-main ${COMPONENT} &>>/tmp/${COMPONENT}.log && cd /home/roboshop/${COMPONENT} &>>/tmp/${COMPONENT}.log
+unzip -o /tmp/${COMPONENT}.zip &>>/tmp/${COMPONENT}.log && mv ${COMPONENT}-main ${COMPONENT} &>>/tmp/${COMPONENT}.log && cd /home/roboshop/${COMPONENT} &>>/tmp/${COMPONENT}.log
 statuscheck
 
 echo installing nodejs Dependencies
