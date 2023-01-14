@@ -35,7 +35,7 @@ statuscheck
 
 echo extract application archive
 unzip -o /tmp/${COMPONENT}.zip &>>/tmp/${COMPONENT}.log && mv ${COMPONENT}-main ${COMPONENT} &>>/tmp/${COMPONENT}.log && cd /home/roboshop/${COMPONENT} &>>/tmp/${COMPONENT}.log
-statuscheck
+echo $?
 
 echo installing nodejs Dependencies
 npm install &>>/tmp/${COMPONENT}.log
