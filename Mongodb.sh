@@ -23,4 +23,4 @@ statuscheck
 
 echo load schema
 cd mongodb-main &>>${LOG} && mongo < catalogue.js &>>${LOG} && mongo < users.js &>>${LOG}
-
+statuscheck
