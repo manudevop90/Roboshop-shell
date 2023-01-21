@@ -2,7 +2,7 @@
 
 source common.sh
 
-COMPONENT=catalogue
+COMPONENT=frontend
 
 
 
