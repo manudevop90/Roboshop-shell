@@ -55,3 +55,9 @@ echo starting ${COMPONENT} services
 systemctl start ${COMPONENT} &>>/tmp/${COMPONENT}.log && systemctl enable ${COMPONENT} &>>/tmp/${COMPONENT}.log
 statuscheck
  }
+
+ user_id=$(id -u)
+ if [ $user_id -ne 0 ]; then
+   echo -e "\e[32m you should run this script as root user or sudo\e[0m"
+   exit 1
+  fi
