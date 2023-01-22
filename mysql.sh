@@ -8,15 +8,15 @@ if [ -z "$MYSQL_PASSWORD" ]; then
 fi
 
 echo setup yum repo
-curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo
+curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo &>>{LOG}
 statuscheck
 
 echo install mysql service
-yum install mysql-community-server -y
+yum install mysql-community-server -y &>>{LOG}
 statuscheck
 
 echo start mysql
-systemctl enable mysqld &>>{LOG} && systemctl start mysqld
+systemctl enable mysqld &>>{LOG} && systemctl start mysqld &>>{LOG}
 statuscheck
 
 DEFUAILT_PASSWORD=$(grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}')
