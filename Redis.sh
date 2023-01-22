@@ -9,9 +9,10 @@ statuscheck
 
 echo install redis
 yum install redis -y &>>${LOG}
-
+statuscheck
 
 
 #update listed ip
 echo start redis service
 systemctl enable redis &>>{LOG} && systemctl start redis &>>{LOG}
+statuscheck
