@@ -9,6 +9,7 @@ fi
 
 echo setup yum repo
 curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo &>>{LOG}
+dnf module disable mysql &>>{LOG}
 statuscheck
 
 echo install mysql service
