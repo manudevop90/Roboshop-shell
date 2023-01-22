@@ -12,8 +12,8 @@ yum install -y mongodb-org &>>${LOG}
 statuscheck
 
 echo start mongodb service
- systemctl enable mongod &>>${LOG} && systemctl start mongod &>>${LOG}
- stautscheck
+systemctl enable mongod &>>${LOG} && systemctl start mongod &>>${LOG}
+statuscheck
 
 DOWNLOAD
 
