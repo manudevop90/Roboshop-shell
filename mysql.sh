@@ -13,7 +13,7 @@ statuscheck
 
 echo module disable mysql
 dnf module disable mysql &>>{LOG}
-statuscheck
+echo $?
 
 echo install mysql service
 sudo yum install mysql-community-server -y
