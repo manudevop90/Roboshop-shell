@@ -21,7 +21,7 @@ statuscheck
 
 echo start mysql
 systemctl enable mysqld &>>{LOG} && systemctl start mysqld
-echo $?
+statuscheck
 
 DEFUAILT_PASSWORD=$(grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}')
 
