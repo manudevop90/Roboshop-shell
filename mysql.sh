@@ -13,11 +13,12 @@ statuscheck
 
 echo module disable mysql
 dnf module disable mysql &>>{LOG}
-echo $?
+statuscheck
 
 echo install mysql service
 sudo yum install mysql-community-server -y
-statuscheck
+echo $?
+
 
 echo start mysql
 systemctl enable mysqld &>>{LOG} && systemctl start mysqld &>>{LOG}
