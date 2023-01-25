@@ -25,7 +25,7 @@ statuscheck
 
 DEFUAILT_PASSWORD=$(grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}')
 
-echo MYSQL PASSWORD = $MYSQL_PASSWORD
+echo "show databases;" | mysql -uroot -p$MYSQL_PASSWORD &>>${log}
 echo "alter user 'root'@'localhost' identified with mysql_native_password by '$MYSQL_PASSWORD';" | mysql --connect-expired-password -uroot -p${DEFUAILT_PASSWORD}
 
 echo "uninstall plugin validate_password;" | mysql -uroot -p$MYSQL_PASSWORD
