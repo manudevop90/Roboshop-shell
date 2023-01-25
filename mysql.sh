@@ -16,7 +16,7 @@ dnf module disable mysql &>>{LOG}
 statuscheck
 
 echo install mysql service
-sudo yum install mysql-community-server -y &>>{LOG}
+sudo yum install mysql-community-server -y
 statuscheck
 
 echo start mysql
