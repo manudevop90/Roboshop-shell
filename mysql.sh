@@ -19,8 +19,9 @@ echo install mysql service
 yum install mysql-community-server -y &>>{LOG}
 statuscheck
 
-echo start mysql
-systemctl enable mysqld
+echo systemctl enable mysqld
+echo systemctl start mysqld
+
 echo $?
  systemctl start mysqld
 echo $?
