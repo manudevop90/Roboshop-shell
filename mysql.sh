@@ -26,7 +26,7 @@ echo $?
 
 DEFUAILT_PASSWORD=$(grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}')
 
-#echo "show databases;" | mysql -uroot -p$MYSQL_PASSWORD &>>${log}
+echo "show databases;" | mysql -uroot -p$MYSQL_PASSWORD &>>${log}
 
 echo "alter user 'root'@'localhost' identified with mysql_native_password by '$MYSQL_PASSWORD';" | mysql --connect-expired-password -uroot -p${DEFUAILT_PASSWORD}
 
