@@ -20,10 +20,8 @@ yum install mysql-community-server -y &>>{LOG}
 statuscheck
 
 echo systemctl enable mysqld
-echo systemctl start mysqld
-
 echo $?
- systemctl start mysqld
+echo systemctl start mysqld
 echo $?
 
 DEFUAILT_PASSWORD=$(grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}')
