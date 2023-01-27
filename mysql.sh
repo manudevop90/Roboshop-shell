@@ -19,10 +19,7 @@ echo install mysql service
 yum install mysql-community-server -y &>>{LOG}
 statuscheck
 
-echo systemctl enable mysqld
-statuscheck
-
-echo systemctl start mysqld
+echo systemctl enable mysqld && echo systemctl start mysqld
 statuscheck
 
 DEFUAILT_PASSWORD=$(grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}')
@@ -32,10 +29,10 @@ echo "alter user 'root'@'localhost' identified with mysql_native_password by '$M
 exit
 echo "uninstall plugin validate_password;" | mysql -uroot -p$MYSQL_PASSWORD
 
-echo "show databases;" | mysql -uroot -p$MYSQL_PASSWORD &>>${log}
+#echo "show databases;" | mysql -uroot -p$MYSQL_PASSWORD &>>${log}
 
 curl -s -L -o /tmp/mysql.zip "https://github.com/roboshop-devops-project/mysql/archive/main.zip"
 
 cd /tmp &>>{LOG} && unzip -o mysql.zip &>>{LOG}
 cd mysql-main
-mysql -u root -pRoboShop@1 <shipping.sql
+mysql -uroot -pRoboShop@1 <shipping.sql
