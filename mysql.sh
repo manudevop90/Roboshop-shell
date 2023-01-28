@@ -29,7 +29,7 @@ echo "alter user 'root'@'localhost' identified with mysql_native_password by '$M
 exit
 echo "uninstall plugin validate_password;" | mysql -uroot -p$MYSQL_PASSWORD
 
-#echo "show databases;" | mysql -uroot -p$MYSQL_PASSWORD &>>${log}
+echo "show databases;" | mysql -uroot -p$MYSQL_PASSWORD &>>${log}
 
 curl -s -L -o /tmp/mysql.zip "https://github.com/roboshop-devops-project/mysql/archive/main.zip"
 
