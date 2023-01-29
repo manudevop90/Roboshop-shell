@@ -84,6 +84,6 @@ user_id=$(id -u)
    exit 1
   fi
 
-LOG=/tmp/${COMPONENT}.log
+LOG=${LOG}
 rm -f ${LOG}
 
