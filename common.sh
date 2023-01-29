@@ -62,12 +62,13 @@ statuscheck
 SYSTEMD
 }
 
+
 JAVA() {
 echo install maven
 yum install maven -y &>>${LOG}
 statuscheck
-
 APP_USER_SETUP
+
 DOWNLOAD
 APP_CLEAN
 
@@ -83,6 +84,6 @@ user_id=$(id -u)
    exit 1
   fi
 
-LOG=/tmp/${COMPONENT}.log
+LOG=${LOG}
 rm -f ${LOG}
 
