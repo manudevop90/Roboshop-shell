@@ -19,7 +19,8 @@ echo install mysql service
 yum install mysql-community-server -y &>>{LOG}
 statuscheck
 
-echo systemctl enable mysqld && echo systemctl start mysqld
+echo start mysqld
+echo systemctl enable mysqld &>>{LOG} && echo systemctl start mysqld &>>{LOG}
 statuscheck
 
 echo "show databases;" | mysql -uroot -p$MYSQL_PASSWORD &>>{log}
