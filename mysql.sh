@@ -39,9 +39,8 @@ if [ $? -eq 0 ]; then
   statuscheck
 fi
 
-exit
-curl -s -L -o /tmp/mysql.zip "https://github.com/roboshop-devops-project/mysql/archive/main.zip"
+DOWNLOAD
 
-cd /tmp &>>{LOG} && unzip -o mysql.zip &>>{LOG}
-cd mysql-main
-mysql -uroot -pRoboShop@1 <shipping.sql
+echo "extract & load schema"
+cd /tmp &>>{LOG} && unzip -o mysql.zip &>>{LOG} && cd mysql-main &>>{log} && mysql -uroot -pRoboShop@1 <shipping.sql
+statuscheck
