@@ -22,6 +22,7 @@ APP_USER_SETUP() {
      statuscheck
   fi
   }
+
 APP_CLEAN() {
   echo cleaning old application content
  cd /home/roboshop  &>>${LOG} && rm -rf ${COMPONENT} &>>${LOG}
@@ -61,7 +62,6 @@ statuscheck
  #update ips
 SYSTEMD
 }
-
 
 JAVA() {
 echo install maven
