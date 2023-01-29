@@ -62,7 +62,6 @@ statuscheck
 SYSTEMD
 }
 
-
 JAVA() {
 echo install maven
 yum install maven -y &>>${LOG}
