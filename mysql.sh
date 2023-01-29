@@ -23,7 +23,7 @@ echo systemctl enable mysqld && echo systemctl start mysqld
 statuscheck
 
 echo "show databases;" | mysql -uroot -p$MYSQL_PASSWORD &>>{log}
-if [$? -ne 0 ]; then
+if [$? -ne 0]; then
   echo changing the default password
     DEFUAILT_PASSWORD=$(grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}')
     echo "alter user 'root'@'localhost' identified with mysql_native_password by '$MYSQL_PASSWORD';" | mysql --connect-expired-password -uroot
