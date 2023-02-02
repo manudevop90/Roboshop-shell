@@ -1,7 +1,7 @@
 source common.sh
 COMPONENT=rabbitmq
 
-if [ -z "APP_RABBITMQ_PASSWORD" ]; then
+if [ -z "$APP_RABBITMQ_PASSWORD" ]; then
   echo -e "\e[33m env variable APP_RABBITMQ is needed\e[0m"
  exit 1
 fi
