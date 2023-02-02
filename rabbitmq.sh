@@ -3,7 +3,7 @@ COMPONENT=rabbitmq
 
 echo install erlang
 curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | sudo bash &>>${LOG}
-yum install erlang -y
+yum install erlang -y &>>${LOG}
 statuscheck
 
 echo yum repos
