@@ -1,7 +1,10 @@
 source common.sh
 COMPONENT=rabbitmq
 
-if []
+if [ -z "APP_RABBITMQ_PASSWORD" ]; then
+  echo -e "\e[33m env variable APP_RABBITMQ is needed\e[0m"
+ exit 1
+fi
 
 echo install erlang
 curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | sudo bash &>>${LOG}
