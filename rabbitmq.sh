@@ -4,20 +4,20 @@ COMPONENT=rabbitmq
 echo install erlang
 curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | sudo bash &>>${LOG}
 yum install erlang -y
-statuschek
+statuscheck
 
 echo yum repos
 curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash &>>${LOG}
-statuschek
+statuscheck
 
 echo install rabbitmq
 yum install rabbitmq-server -y &>>${LOG}
-statuschek
+statuscheck
 
 echo start rabbitmq
  systemctl enable rabbitmq-server && systemctl start rabbitmq-server &>>${LOG}
-statuschek
+statuscheck
 
 echo add app user in rabbitmq
  rabbitmqctl add_user roboshop roboshop123 && rabbitmqctl set_user_tags roboshop administrator && rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*" &>>${LOG}
-statuschek
+statuscheck
