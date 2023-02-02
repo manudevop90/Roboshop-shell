@@ -1,4 +1,4 @@
-source comoon.sh
+source common.sh
 COMPONENT=rabbitmq
 
 echo install erlang
