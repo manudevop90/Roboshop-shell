@@ -12,7 +12,7 @@ curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/robo
 statuscheck
 
 echo module disable mysql
-dnf module disable mysql -y &>>{LOG}
+dnf module disable mysql  &>>{LOG}
 statuscheck
 
 echo install mysql service
