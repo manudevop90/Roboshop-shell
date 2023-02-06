@@ -53,8 +53,9 @@ DOWNLOAD
  APP_CLEAN
 
 echo install python dependencies
-  cd /home/roboshop/payment &>>${LOG} && pip3 install -r requirements.txt &>>${LOG}
+  cd /home/roboshop/payment && pip3 install -r requirements.txt &>>${LOG}
 statuscheck
+
  SYSTEMD
   }
 
