@@ -46,8 +46,9 @@ statuscheck
 PYTHON()
 {
   echo install python
-  yum install python36 gcc python3-devel -y
+  yum install python36 gcc python3-devel -y &>>${LOG}
   statuscheck
+
   APP_USER_SETUP
 DOWNLOAD
  APP_CLEAN
