@@ -44,20 +44,17 @@ statuscheck
 }
 
 PYTHON()
-{ yum install python36 gcc python3-devel -y
+{
+  echo install python
+  yum install python36 gcc python3-devel -y
+  statuscheck
+  APP_USER_SETUP
+DOWNLOAD
+ APP_CLEAN
 
-  useradd roboshop
-
-
-  curl -L -s -o /tmp/payment.zip "https://github.com/roboshop-devops-project/payment/archive/main.zip"
-  cd /home/roboshop
-  rm -rf payment
-  unzip -o /tmp/payment.zip
-  mv payment-main payment
-
-  cd /home/roboshop/payment
-  pip3 install -r requirements.txt
-
+echo install python dependencies
+  cd /home/roboshop/payment && pip3 install -r requirements.txt
+statuscheck
  SYSTEMD
   }
 
