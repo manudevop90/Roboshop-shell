@@ -16,7 +16,7 @@ sed -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf &>>${LOG}
 statuscheck
 
 echo start mongodb service
-systemctl enable mongod &>>${LOG} && systemctl start mongod &>>${LOG}
+systemctl enable mongod &>>${LOG} && systemctl restart mongod &>>${LOG}
 statuscheck
 
 DOWNLOAD
