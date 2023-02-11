@@ -12,7 +12,7 @@ yum install -y mongodb-org &>>${LOG}
 statuscheck
 
 echo update MongoDB listen Address
-sed -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf &>>${LOG}
+sed -i 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf &>>${LOG}
 statuscheck
 
 echo start mongodb service
